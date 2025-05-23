@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Chess Game</title>
+  <script src="https://cdn.jsdelivr.net/gh/mliebelt/pgn4web@master/pgn4web.js"></script>
+</head>
+<body>
+  <div id="board"></div>
+  <script>
+    // Replace this with your actual PGN file URL (can be a static PGN file from Lichess or your own)
+    SetPgnUrl("https://lichess.org/api/games/user/ChoBa?max=1&moves=true");
+    SetLiveBroadcast(1, true, false);
+  </script>
+</body>
+</html>
