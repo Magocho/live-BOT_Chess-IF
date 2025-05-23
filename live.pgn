@@ -1,1 +1,22 @@
+[Event "Rated rapid game"]
+[Site "https://lichess.org/V3ds1Lqf"]
+[Date "2025.05.23"]
+[White "ChoBa"]
+[Black "anshkaushik"]
+[Result "0-1"]
+[GameId "V3ds1Lqf"]
+[UTCDate "2025.05.23"]
+[UTCTime "01:23:20"]
+[WhiteElo "1639"]
+[BlackElo "1616"]
+[WhiteRatingDiff "-6"]
+[BlackRatingDiff "+6"]
+[Variant "Standard"]
+[TimeControl "600+0"]
+[ECO "C34"]
+[Opening "King's Gambit Accepted: MacLeod Defense"]
+[Termination "Time forfeit"]
+
+1. e4 { [%eval 0.18] [%clk 0:10:00] } 1... e5 { [%eval 0.21] [%clk 0:10:00] } 2. f4 { [%eval -0.43] [%clk 0:09:57] } 2... exf4 { [%eval -0.39] [%clk 0:09:59] } 3. Nf3 { [%eval -0.39] [%clk 0:09:50] } 3... Nc6 { [%eval 0.14] [%clk 0:09:56] } 4. Bc4 { [%eval -0.66] [%clk 0:09:48] } 4... Nf6 { [%eval -0.01] [%clk 0:09:54] } 5. d3 { [%eval -0.73] [%clk 0:09:37] } 5... Bc5 { [%eval 0.0] [%clk 0:09:52] } 6. Bxf4 { [%eval -0.02] [%clk 0:09:29] } 6... Ng4 { [%eval 1.51] [%clk 0:09:51] } 7. Bxf7+ { [%eval 0.19] [%clk 0:09:20] } 7... Kxf7 { [%eval 0.16] [%clk 0:09:49] } 8. Ng5+ { [%eval 0.36] [%clk 0:09:11] } 8... Kg8 { [%eval 0.35] [%clk 0:09:46] } 9. Qxg4 { [%eval 0.44] [%clk 0:09:01] } 9... d5 { [%eval 0.51] [%clk 0:09:46] } 10. Ne6 { [%eval -1.28] [%clk 0:08:51] } 10... Qf6 { [%eval -1.11] [%clk 0:09:24] } 11. exd5 { [%eval -1.29] [%clk 0:08:10] } 11... Bxe6 { [%eval 1.93] [%clk 0:09:19] } 12. dxe6 { [%eval -1.06] [%clk 0:08:06] } 12... Ne5 { [%eval 2.36] [%clk 0:09:16] } 13. Bxe5 { [%eval 0.12] [%clk 0:07:46] } 13... Qxe5+ { [%eval 0.08] [%clk 0:09:15] } 14. Qe4 { [%eval 0.07] [%clk 0:07:45] } 14... Qxb2 { [%eval 0.22] [%clk 0:09:11] } 15. e7 { [%eval -0.06] [%clk 0:07:23] } 15... Qc1+ { [%eval 5.43] [%clk 0:09:05] } 16. Ke2 { [%eval 5.36] [%clk 0:07:19] } 16... Qxc2+ { [%eval 6.59] [%clk 0:09:03] } 17. Nd2 { [%eval 6.48] [%clk 0:07:06] } 17... Bxe7 { [%eval 6.63] [%clk 0:08:54] } 18. Qxe7 { [%eval 3.93] [%clk 0:05:39] } 18... h6 { [%eval 5.8] [%clk 0:08:52] } 19. Rhf1 { [%eval 4.3] [%clk 0:05:14] } 19... Kh7 { [%eval 8.14] [%clk 0:08:50] } 20. Qe4+ { [%eval 7.73] [%clk 0:05:09] } 20... Kg8 { [%eval 7.48] [%clk 0:08:44] } 21. Qg6 { [%eval 4.86] [%clk 0:05:02] } 21... Qc6 { [%eval 4.92] [%clk 0:08:37] } 22. Qf7+ { [%eval 4.34] [%clk 0:04:15] } 22... Kh7 { [%eval 4.3] [%clk 0:08:26] } 23. Ne4 { [%eval 2.87] [%clk 0:03:56] } 23... Rhf8 { [%eval 2.73] [%clk 0:08:10] } 24. Qh5 { [%eval 2.06] [%clk 0:02:36] } 24... Rxf1 { [%eval 2.99] [%clk 0:08:03] } 25. Rxf1 { [%eval 2.62] [%clk 0:02:34] } 25... Qc2+ { [%eval 2.65] [%clk 0:08:00] } 26. Ke3 { [%eval 2.54] [%clk 0:02:23] } 26... Qxg2 { [%eval 2.67] [%clk 0:07:49] } 27. Rf7 { [%eval 2.62] [%clk 0:01:02] } 27... Qg1+ { [%eval 3.01] [%clk 0:07:38] } 28. Kd2 { [%eval 2.87] [%clk 0:00:59] } 28... Qg2+ { [%eval 2.83] [%clk 0:07:31] } 29. Kc3 { [%eval 2.78] [%clk 0:00:54] } 29... Qg6 { [%eval 6.29] [%clk 0:07:24] } 30. Nf6+ { [%eval 6.0] [%clk 0:00:30] } 30... Qxf6+ { [%eval 6.15] [%clk 0:07:17] } 31. Rxf6 { [%eval 5.93] [%clk 0:00:29] } 31... gxf6 { [%eval 5.86] [%clk 0:07:16] } 32. Qf7+ { [%eval 6.22] [%clk 0:00:26] } 32... Kh8 { [%eval 6.13] [%clk 0:07:14] } 33. Qxf6+ { [%eval 5.93] [%clk 0:00:25] } 33... Kh7 { [%eval 6.43] [%clk 0:07:10] } 34. Qf7+ { [%eval 6.21] [%clk 0:00:20] } 34... Kh8 { [%eval 6.85] [%clk 0:07:07] } 35. Qxc7 { [%eval 6.35] [%clk 0:00:16] } 35... Rg8 { [%eval 6.98] [%clk 0:07:02] } 36. Qxb7 { [%eval 6.65] [%clk 0:00:14] } 36... Rg7 { [%eval 6.87] [%clk 0:07:00] } 37. Qb8+ { [%eval 7.12] [%clk 0:00:11] } 37... Kh7 { [%eval 7.08] [%clk 0:06:58] } 38. Qe5 { [%eval 7.0] [%clk 0:00:08] } 38... Kg8 { [%eval 7.28] [%clk 0:06:49] } 39. Qe6+ { [%eval 6.69] [%clk 0:00:06] } 39... Kh7 { [%eval 7.46] [%clk 0:06:47] } 40. Qf5+ { [%eval 6.77] [%clk 0:00:05] } 40... Rg6 { [%eval 7.91] [%clk 0:06:45] } 41. Qxg6+ { [%eval 7.61] [%clk 0:00:04] } 41... Kxg6 { [%eval 7.4] [%clk 0:06:44] } 42. Kc4 { [%eval 7.17] [%clk 0:00:03] } 42... h5 { [%eval 8.71] [%clk 0:06:42] } 43. Kc5 { [%eval 8.59] [%clk 0:00:02] } 43... Kf5 { [%eval 8.72] [%clk 0:06:41] } 44. d4 { [%eval 8.26] [%clk 0:00:02] } 44... h4 { [%eval #28] [%clk 0:06:40] } 45. d5 { [%eval 12.36] [%clk 0:00:01] } 45... Kf6 { [%eval 9.27] [%clk 0:06:38] } 46. d6 { [%eval 9.11] [%clk 0:00:01] } 46... Ke6 { [%eval 8.69] [%clk 0:06:36] } 0-1
+
 
