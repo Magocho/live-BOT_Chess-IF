@@ -2,20 +2,14 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Live Chess Viewer with chessboard.js</title>
-  
-  <!-- chessboard.js CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
-  
-  <!-- jQuery (required by chessboard.js) -->
+  <title>Chessboard + chess.js Example</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+  />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-  <!-- chess.js for PGN parsing and game logic -->
-  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.js"></script>
-  
-  <!-- chessboard.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
-  
   <style>
     #board {
       width: 400px;
@@ -24,46 +18,49 @@
   </style>
 </head>
 <body>
-  <h2>Live Chess Game Viewer</h2>
+  <h2>Live Chess Viewer</h2>
   <div id="board"></div>
   <button id="nextBtn">Next Move</button>
   <p id="status"></p>
 
   <script>
-    const pgnUrl = 'live.pgn'; // URL do seu arquivo PGN
-    
+    const pgnUrl = 'live.pgn'; // Your PGN file path
+
     let chess = new Chess();
     let board = null;
     let moves = [];
     let currentMove = 0;
-    
-    // Carrega o PGN via AJAX
-    $.get(pgnUrl, function(data) {
-      const loadResult = chess.load_pgn(data);
-      if (!loadResult) {
-        $('#status').text('Erro ao carregar PGN');
+
+    $.get(pgnUrl, function (data) {
+      const loaded = chess.load_pgn(data);
+      if (!loaded) {
+        $('#status').text('Error loading PGN');
         return;
       }
       moves = chess.history();
       chess.reset();
-      
+
       board = Chessboard('board', {
         position: 'start',
-        pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png'
+        pieceTheme:
+          'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
       });
-      $('#status').text('Jogo carregado. Clique em "Next Move" para avançar.');
-    }).fail(function() {
-      $('#status').text('Falha ao carregar o arquivo PGN.');
+
+      $('#status').text('Game loaded. Click "Next Move" to advance.');
+    }).fail(function () {
+      $('#status').text('Failed to load PGN file.');
     });
-    
-    $('#nextBtn').on('click', function() {
+
+    $('#nextBtn').click(function () {
       if (currentMove < moves.length) {
         chess.move(moves[currentMove]);
         board.position(chess.fen());
         currentMove++;
-        $('#status').text('Jogada ' + currentMove + ': ' + moves[currentMove - 1]);
+        $('#status').text(
+          'Move ' + currentMove + ': ' + moves[currentMove - 1]
+        );
       } else {
-        $('#status').text('Não há mais jogadas.');
+        $('#status').text('No more moves.');
       }
     });
   </script>
