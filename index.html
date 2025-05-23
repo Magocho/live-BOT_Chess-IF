@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
   <!-- chess.js for PGN parsing and game logic -->
-  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.js"></script>
   
   <!-- chessboard.js JS -->
   <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
@@ -30,33 +30,30 @@
   <p id="status"></p>
 
   <script>
-    const pgnUrl = 'live.pgn'; // your PGN file URL
+    const pgnUrl = 'live.pgn'; // URL do seu arquivo PGN
     
     let chess = new Chess();
     let board = null;
     let moves = [];
     let currentMove = 0;
     
-    // Load PGN file via AJAX
+    // Carrega o PGN via AJAX
     $.get(pgnUrl, function(data) {
-      // Load PGN to chess.js
       const loadResult = chess.load_pgn(data);
       if (!loadResult) {
-        $('#status').text('Error loading PGN');
+        $('#status').text('Erro ao carregar PGN');
         return;
       }
-      // Get all moves
       moves = chess.history();
       chess.reset();
       
-      // Initialize the board with starting position
       board = Chessboard('board', {
         position: 'start',
         pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png'
       });
-      $('#status').text('Game loaded. Click "Next Move" to play.');
+      $('#status').text('Jogo carregado. Clique em "Next Move" para avançar.');
     }).fail(function() {
-      $('#status').text('Failed to load PGN file.');
+      $('#status').text('Falha ao carregar o arquivo PGN.');
     });
     
     $('#nextBtn').on('click', function() {
@@ -64,9 +61,9 @@
         chess.move(moves[currentMove]);
         board.position(chess.fen());
         currentMove++;
-        $('#status').text('Move ' + currentMove + ': ' + moves[currentMove - 1]);
+        $('#status').text('Jogada ' + currentMove + ': ' + moves[currentMove - 1]);
       } else {
-        $('#status').text('No more moves.');
+        $('#status').text('Não há mais jogadas.');
       }
     });
   </script>
