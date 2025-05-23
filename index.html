@@ -2,79 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Live Chess PGN Viewer</title>
+<title>Chessboard Test</title>
 <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
 <style>
   #board { width: 400px; margin: 20px auto; }
-  #moves { width: 400px; margin: 10px auto; font-family: monospace; white-space: pre-wrap; }
 </style>
 </head>
 <body>
 
-<h1 style="text-align:center;">Live Chess PGN Viewer</h1>
-
 <div id="board"></div>
-<div id="moves"></div>
 
 <script src="js/chess.min.js"></script>
 <script src="js/chessboard-1.0.0.min.js"></script>
 <script>
-  const boardElement = document.getElementById('board');
-  const movesElement = document.getElementById('moves');
-
-  let board, game;
-
-  // Initialize chess.js game object
-  function initGame() {
-    game = new Chess();
-  }
-
-  // Initialize chessboard.js UI board
-  function initBoard() {
-    board = Chessboard('board', {
-      position: 'start',
-      pieceTheme: 'img/chesspieces/wikipedia/{piece}.png'
-    });
-  }
-
-  // Load PGN text into chess.js and update board + moves
-  function loadPGN(pgn) {
-    initGame();
-    const loadSuccess = game.load_pgn(pgn);
-    if (!loadSuccess) {
-      movesElement.textContent = 'Failed to load PGN';
-      return;
-    }
-
-    // Show moves text (optional)
-    movesElement.textContent = pgn;
-
-    // Set board to final position
-    board.position(game.fen());
-  }
-
-  // Fetch live.pgn and update UI
-  function fetchPGN() {
-    fetch('live.pgn?cache=' + new Date().getTime()) // cache bust
-      .then(response => {
-        if (!response.ok) throw new Error('Failed to fetch PGN');
-        return response.text();
-      })
-      .then(pgnText => {
-        loadPGN(pgnText);
-      })
-      .catch(err => {
-        movesElement.textContent = 'Error loading PGN: ' + err.message;
-      });
-  }
-
-  // Initialize
-  initBoard();
-  fetchPGN();
-
-  // Optionally refresh PGN every 5 minutes (300000ms)
-  setInterval(fetchPGN, 300000);
-
+  const board = Chessboard('board', {
+    position: 'start',
+    pieceTheme: 'img/chesspieces/wikipedia/{piece}.png',
+  });
 </script>
+
 </body>
 </html>
