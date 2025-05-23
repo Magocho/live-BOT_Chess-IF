@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Chessboard + chess.js Example</title>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
-  />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  <title>Live Lichess Game with Chessground</title>
   <style>
-    #board {
-      width: 400px;
-      margin: 20px auto;
-    }
+    #board { width: 400px; height: 400px; margin: auto; }
   </style>
+
+  <!-- Chessground CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessground@8.2.0/dist/chessground.min.css" />
 </head>
 <body>
-  <h2>Live Chess Viewer</h2>
+  <h2>Live Lichess Game</h2>
   <div id="board"></div>
   <button id="nextBtn">Next Move</button>
   <p id="status"></p>
 
-  <script>
-    const pgnUrl = 'live.pgn'; // Your PGN file path
+  <!-- Chessground JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chessground@8.2.0/dist/chessground.min.js"></script>
+  <!-- chessops for PGN parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/chessops@0.19.2/chessops.umd.min.js"></script>
 
-    let chess = new Chess();
-    let board = null;
-    let moves = [];
+  <script>
+    const username = 'ChoBa';  // change this to your lichess username
+    const apiUrl = `https://lichess.org/api/games/user/${username}?max=1&moves=true&opening=true&perfType=rapid`;
+
+    let gameMoves = [];
     let currentMove = 0;
 
-    $.get(pgnUrl, function (data) {
-      const loaded = chess.load_pgn(data);
-      if (!loaded) {
-        $('#status').text('Error loading PGN');
-        return;
-      }
-      moves = chess.history();
-      chess.reset();
-
-      board = Chessboard('board', {
-        position: 'start',
-        pieceTheme:
-          'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
-      });
-
-      $('#status').text('Game loaded. Click "Next Move" to advance.');
-    }).fail(function () {
-      $('#status').text('Failed to load PGN file.');
+    let chess = chessops.Chess.new();
+    let cg = Chessground(document.getElementById('board'), {
+      coordinates: true,
+      movable: { free: false, color: 'white' },
+      turnColor: 'white',
+      highlight: { lastMove: true, check: true }
     });
 
-    $('#nextBtn').click(function () {
-      if (currentMove < moves.length) {
-        chess.move(moves[currentMove]);
-        board.position(chess.fen());
-        currentMove++;
-        $('#status').text(
-          'Move ' + currentMove + ': ' + moves[currentMove - 1]
-        );
-      } else {
-        $('#status').text('No more moves.');
+    // Fetch latest game PGN from lichess API
+    fetch(apiUrl, { headers: { Accept: 'application/x-chess-pgn' } })
+      .then(res => res.text())
+      .then(pgn => {
+        // Parse PGN with chessops
+        const games = chessops.Pgn.parse(pgn);
+        if (games.length === 0) {
+          document.getElementById('status').textContent = 'No recent games found.';
+          return;
+        }
+        chess = chessops.Chess.fromPgn(games[0]);
+        gameMoves = chess.legalMoves(); // start from current position
+        currentMove = 0;
+        cg.set({ fen: chess.fen() });
+        document.getElementById('status').textContent = 'Game loaded. Click Next Move.';
+      }).catch(() => {
+        document.getElementById('status').textContent = 'Failed to load game data.';
+      });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (currentMove >= gameMoves.length) {
+        document.getElementById('status').textContent = 'No more moves.';
+        return;
       }
+      // Make the next move
+      chess = chess.applyMove(gameMoves[currentMove]);
+      cg.set({ fen: chess.fen() });
+      currentMove++;
+      document.getElementById('status').textContent = `Move ${currentMove} made.`;
     });
   </script>
 </body>
