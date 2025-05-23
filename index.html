@@ -2,20 +2,73 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Live Chess Viewer</title>
-  <script src="https://cdn.jsdelivr.net/gh/mliebelt/pgn4web@v1.42/pgn4web.js"></script>
+  <title>Live Chess Viewer with chessboard.js</title>
+  
+  <!-- chessboard.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
+  
+  <!-- jQuery (required by chessboard.js) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- chess.js for PGN parsing and game logic -->
+  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
+  
+  <!-- chessboard.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  
   <style>
     #board {
-      width: 600px;
+      width: 400px;
       margin: 20px auto;
     }
   </style>
 </head>
 <body>
+  <h2>Live Chess Game Viewer</h2>
   <div id="board"></div>
+  <button id="nextBtn">Next Move</button>
+  <p id="status"></p>
+
   <script>
-    SetPgnUrl("live.pgn");
-    SetLiveBroadcast(1, true, false);
+    const pgnUrl = 'live.pgn'; // your PGN file URL
+    
+    let chess = new Chess();
+    let board = null;
+    let moves = [];
+    let currentMove = 0;
+    
+    // Load PGN file via AJAX
+    $.get(pgnUrl, function(data) {
+      // Load PGN to chess.js
+      const loadResult = chess.load_pgn(data);
+      if (!loadResult) {
+        $('#status').text('Error loading PGN');
+        return;
+      }
+      // Get all moves
+      moves = chess.history();
+      chess.reset();
+      
+      // Initialize the board with starting position
+      board = Chessboard('board', {
+        position: 'start',
+        pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png'
+      });
+      $('#status').text('Game loaded. Click "Next Move" to play.');
+    }).fail(function() {
+      $('#status').text('Failed to load PGN file.');
+    });
+    
+    $('#nextBtn').on('click', function() {
+      if (currentMove < moves.length) {
+        chess.move(moves[currentMove]);
+        board.position(chess.fen());
+        currentMove++;
+        $('#status').text('Move ' + currentMove + ': ' + moves[currentMove - 1]);
+      } else {
+        $('#status').text('No more moves.');
+      }
+    });
   </script>
 </body>
 </html>
