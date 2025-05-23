@@ -1,21 +1,21 @@
 [Event "Rated rapid game"]
-[Site "https://lichess.org/qcmOkeC1"]
+[Site "https://lichess.org/DRV7kOHc"]
 [Date "2025.05.23"]
-[White "abdesslam1111"]
-[Black "ChoBa"]
-[Result "0-1"]
-[GameId "qcmOkeC1"]
+[White "ChoBa"]
+[Black "intransigenttortoise"]
+[Result "1-0"]
+[GameId "DRV7kOHc"]
 [UTCDate "2025.05.23"]
-[UTCTime "17:11:02"]
-[WhiteElo "1714"]
-[BlackElo "1633"]
-[WhiteRatingDiff "-7"]
-[BlackRatingDiff "+7"]
+[UTCTime "20:20:07"]
+[WhiteElo "1640"]
+[BlackElo "1650"]
+[WhiteRatingDiff "+6"]
+[BlackRatingDiff "-18"]
 [Variant "Standard"]
 [TimeControl "600+0"]
-[ECO "B40"]
+[ECO "B10"]
 [Termination "Normal"]
 
-1. e4 c5 2. Nf3 e6 3. c3 d5 4. exd5 exd5 5. Bb5+ Bd7 6. Bxd7+ Nxd7 7. O-O Ngf6 8. d4 c4 9. Re1+ Be7 10. Bg5 O-O 11. Ne5 h6 12. Nxd7 Qxd7 13. Bh4 Rae8 14. Nd2 g5 15. Bg3 Bd6 16. Nf3 Bxg3 17. fxg3 Rxe1+ 18. Qxe1 Re8 19. Qd2 Ne4 20. Qc2 Qf5 21. Re1 f6 22. Qa4 Qe6 23. Qxa7 Qf5 24. Qxb7 g4 25. Qc6 Kf8 26. Rf1 gxf3 27. Rxf3 Qe6 28. Qa4 Nd2 29. Qb4+ Kf7 30. Qb7+ Re7 0-1
+1. e4 c6 2. f4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2 Ne7 6. d4 Ng6 7. O-O c5 8. c4 Nc6 9. cxd5 exd5 10. Bb5 cxd4 11. Qxd4 Qa5 12. Qxd5 Be6 13. Bxc6+ bxc6 14. Qxa5 1-0
 
 
