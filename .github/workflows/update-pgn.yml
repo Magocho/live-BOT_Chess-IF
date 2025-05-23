@@ -1,0 +1,30 @@
+name: Update PGN
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # runs every 15 minutes
+  workflow_dispatch:        # manual trigger available
+
+jobs:
+  update-pgn:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch latest PGN from Lichess
+        run: |
+          curl -L -o live.pgn "https://lichess.org/api/games/user/ChoBa?max=1&moves=true&opening=true&evals=true&clocks=true&perfType=rapid" -H "Accept: application/x-chess-pgn"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add live.pgn
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update PGN file"
+            git push
+          fi
