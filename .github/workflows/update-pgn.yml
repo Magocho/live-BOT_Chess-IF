@@ -29,3 +29,4 @@ jobs:
           else
             git commit -m "Update PGN file"
             git push
+          fi
