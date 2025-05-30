@@ -1,21 +1,21 @@
-[Event "Rated blitz game"]
-[Site "https://lichess.org/fAiWRJ6u"]
+[Event "Rated rapid game"]
+[Site "https://lichess.org/ChAwFIMf"]
 [Date "2025.05.30"]
-[White "sohile4e5"]
+[White "John_smith457a"]
 [Black "ChoBa"]
 [Result "1-0"]
-[GameId "fAiWRJ6u"]
+[GameId "ChAwFIMf"]
 [UTCDate "2025.05.30"]
-[UTCTime "16:11:25"]
-[WhiteElo "1316"]
-[BlackElo "1333"]
-[WhiteRatingDiff "+12"]
-[BlackRatingDiff "-10"]
+[UTCTime "22:55:46"]
+[WhiteElo "1670"]
+[BlackElo "1653"]
+[WhiteRatingDiff "+6"]
+[BlackRatingDiff "-5"]
 [Variant "Standard"]
-[TimeControl "300+0"]
-[ECO "B00"]
+[TimeControl "600+0"]
+[ECO "A00"]
 [Termination "Normal"]
 
-1. e4 Nc6 2. Nf3 e6 3. d4 d5 4. exd5 exd5 5. Nc3 Nf6 6. Bf4 Bb4 7. Bd3 O-O 8. O-O Bxc3 9. bxc3 Bg4 10. h3 Bxf3 11. Qxf3 Ne7 12. Rab1 b6 13. c4 dxc4 14. Bxc4 Qxd4 15. Bb3 Ng6 16. Bxc7 Nh4 17. Qc6 Rac8 18. Rbd1 Qe4 19. Qxe4 Nxe4 20. Rfe1 Rxc7 21. Rxe4 Ng6 22. Rde1 Kh8 23. Re8 Rc8 24. Bxf7 Rcxe8 25. Rxe8 h5 1-0
+1. b4 e5 2. Bb2 Bxb4 3. Bxe5 Nc6 4. Bxg7 Qg5 5. Bxh8 Nf6 6. Nf3 Qh6 7. h4 Ne4 8. c3 Nxf2 9. Kxf2 Qf6 10. Bxf6 1-0
 
 
