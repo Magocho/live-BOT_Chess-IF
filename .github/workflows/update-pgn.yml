@@ -16,7 +16,7 @@ jobs:
       - name: Fetch latest PGN from Lichess
         run: |
           curl -L -H "Accept: application/x-chess-pgn" \
-          "https://lichess.org/api/games/user/ChoBa?max=1&moves=true" \
+          "https://lichess.org/api/games/user/Chess-IF?max=1&moves=true" \
           -o live.pgn
 
       - name: Commit and push changes
