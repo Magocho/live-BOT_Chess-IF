@@ -1,23 +1,23 @@
 [Event "rated blitz game"]
-[Site "https://lichess.org/aKbQhFhN"]
+[Site "https://lichess.org/wH5EOSiq"]
 [Date "2025.06.13"]
-[White "QueensGamBOT"]
+[White "Humanoid_1800"]
 [Black "Chess-IF"]
 [Result "1-0"]
-[GameId "aKbQhFhN"]
+[GameId "wH5EOSiq"]
 [UTCDate "2025.06.13"]
-[UTCTime "15:09:46"]
-[WhiteElo "1651"]
+[UTCTime "15:14:10"]
+[WhiteElo "1509"]
 [BlackElo "1351"]
-[WhiteRatingDiff "+2"]
-[BlackRatingDiff "-4"]
+[WhiteRatingDiff "+3"]
+[BlackRatingDiff "-6"]
 [WhiteTitle "BOT"]
 [BlackTitle "BOT"]
 [Variant "Standard"]
 [TimeControl "180+1"]
-[ECO "C41"]
-[Termination "Normal"]
+[ECO "D35"]
+[Termination "Time forfeit"]
 
-1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5 Nxe4 5. Qd5 Bf5 6. Bc4 Bg6 7. Qxb7 Nd7 8. Qc6 dxe5 9. Bd5 Nd6 10. Qxa8 Be7 11. Qxa7 Nb6 12. Bc6+ Kf8 13. Nxe5 Bf6 14. Nxg6+ hxg6 15. O-O Nbc4 16. Nc3 Rh4 17. Nd5 Ne5 18. Ba4 Rxh2 19. Kxh2 Ndc4 20. Nxc7 Kg8 21. Kg1 Nxb2 22. Bxb2 Nd3 23. Bxf6 Nc1 24. Bxd8 Nb3 25. Bxb3 g5 26. Ne8 Kh8 27. Qxf7 Kh7 28. Qxg7# 1-0
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. c5 Be7 5. f3 O-O 6. e4 b6 7. e5 Nh5 8. cxb6 c6 9. Nge2 axb6 10. g4 c5 11. gxh5 Bh4+ 12. Ng3 Nc6 13. Be3 f5 14. Qd2 1-0
 
 
